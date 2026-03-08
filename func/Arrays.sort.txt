@@ -1,0 +1,12 @@
+import java.util.Arrays;
+Arrays.sort(rd, (a, b) -> {
+    String sa = a + b, sb = b + a;
+    return sb.compareTo(sa);
+});
+
+
+Arrays.sort(rd, 比较器)：对数组rd进行自定义规则排序，第二个参数是 Lambda 表达式形式的比较器（决定排序顺序）；
+比较器逻辑（a和b是数组中两个待比较的二进制字符串）：
+String sa = a + b：把a拼在b前面（比如a="10"、b="11"→sa="1011"）；
+String sb = b + a：把b拼在a前面（比如b="11"、a="10"→sb="1110"）；
+sb.compareTo(sa)：比较sb和sa的字典序（字符串按字符逐个比较

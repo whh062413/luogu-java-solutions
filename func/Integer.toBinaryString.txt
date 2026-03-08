@@ -1,0 +1,10 @@
+String[] rd = new String[n];
+for (int i = 1; i <= n; ++i) {
+    rd[i - 1] = Integer.toBinaryString(i);
+}
+
+String[] rd = new String[n]：创建长度为n的字符串数组，用于存储1~n的二进制字符串；
+循环i从1到n：
+Integer.toBinaryString(i)：Java 内置方法，将十进制整数i转为二进制字符串（比如i=1→"1"、i=2→"10"、i=3→"11"）；
+rd[i - 1]：数组下标从 0 开始，所以i=1对应下标 0，i=2对应下标 1，以此类推。
+示例：若n=3，循环结束后rd = ["1", "10", "11"]。

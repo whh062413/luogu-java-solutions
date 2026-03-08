@@ -1,0 +1,7 @@
+import java.math.BigInteger;
+
+BigInteger rs2 = new BigInteger(rs.toString(), 2);
+System.out.println(rs2);
+new BigInteger(字符串, 进制)：将指定进制的字符串转为十进制的BigInteger对象：
+rs.toString()：获取拼接后的二进制字符串（比如"11110"）；
+2：表示该字符串是二进制格式；

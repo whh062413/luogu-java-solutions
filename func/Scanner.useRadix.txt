@@ -1,0 +1,10 @@
+带前缀自动识别：
+八进制数字以 0 开头（如 0123），十六进制以 0x/0X 开头（如 0x1A/0XFF）；
+直接调用 nextInt()/nextLong() 即可，Scanner 会自动识别前缀并解析为对应十进制数值。
+不带前缀手动设基数：
+scanner.useRadix(8)：设置后续读取的数字按八进制解析；
+scanner.useRadix(16)：设置后续读取的数字按十六进制解析；
+解析完成后建议用 scanner.reset() 重置为默认的十进制，避免影响后续输入读取。
+注意事项：
+输入的数字必须符合对应进制的规则（如八进制只能包含 0-7，十六进制包含 0-9、a-f/A-F），否则会抛出 InputMismatchException；
+如果需要读取字符串形式的进制数字再转换，可先用 next() 读取字符串，再通过 Integer.parseInt(str, radix) 解析（如 Integer.parseInt("1A", 16)）。

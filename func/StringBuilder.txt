@@ -1,0 +1,10 @@
+StringBuilder
+
+StringBuilder rs = new StringBuilder();
+for (int i = 0; i < n; ++i) {
+    rs = rs.append(rd[i]);//插入用.append
+}
+
+
+.charAt(k)//找第k位的字符
+.toString()//转换
