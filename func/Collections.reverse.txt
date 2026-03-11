@@ -1,0 +1,15 @@
+Collections.reverse() 是 Java 中 java.util.Collections 工具类提供的静态方法，专门用于反转 List 集合中元素的顺序，是路径回溯场景中 “逆序变正序” 的核心工具。
+
+
+import java.util.*;
+
+public class ReverseDemo {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>(Arrays.asList(5, 4, 3, 2, 1));
+        System.out.println("反转前：" + list); // 输出 [5, 4, 3, 2, 1]
+        
+        Collections.reverse(list); // 原地反转
+        
+        System.out.println("反转后：" + list); // 输出 [1, 2, 3, 4, 5]
+    }
+}

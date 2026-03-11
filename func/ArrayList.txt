@@ -1,0 +1,19 @@
+一、ArrayList 核心概念
+ArrayList 是 Java 中 java.util 包下的动态数组实现，实现了 List 接口。相比普通数组（如 int[] arr），它的核心优势是大小可动态扩容，无需提前指定固定长度，非常适合元素数量不确定的场景（比如挖地雷问题中存储长度未知的最优路径）。
+你代码中的 List<Integer> path = new ArrayList<>(); 是典型的「面向接口编程」写法：
+List 是 Java 集合框架中的接口（定义了 List 的通用行为）；
+ArrayList 是 List 接口的常用实现类（基于动态数组）；
+<Integer> 是泛型约束：限定这个集合只能存储 Integer 类型（对应地窖编号的整数），避免存入非整数导致类型错误；
+这种写法更灵活（后续可无缝替换为 LinkedList 等其他 List 实现），是行业最佳实践。
+
+方法签名	                                           作用说明	                                                                                                               代码中的使用示例
+add(E e)	                                           向列表末尾添加元素（最常用）	                                                                                path.add(cur);（添加当前地窖编号）
+get(int index)	                                   获取指定索引位置的元素（索引从 0 开始）	                                                                path.get(i)（输出路径时取值）
+size()	                                          返回列表中元素的个数（替代数组的length）	                                                        path.size()（遍历路径时的循环终止条件）
+reverse(List<?> list)	                （Collections 工具类）反转列表顺序（非 ArrayList 自身方法，但你代码中用到）	Collections.reverse(path);（逆序路径转正序）
+add(int index, E e)	                          向指定索引位置插入元素（末尾添加用add(E e)即可）	                                        path.add(0, 1);（在路径开头插入地窖 1）
+set(int index, E e)	                           替换指定索引位置的元素	                                                                                        path.set(1, 2);（把索引 1 的元素改为 2）
+remove(int index)	                           删除指定索引的元素，返回被删除的元素	                                                                path.remove(2);（删除索引 2 的元素）
+isEmpty()	                                  判断列表是否为空（返回 boolean）	                                                                        if (path.isEmpty()) {...}（判断路径是否为空）
+clear()	                                          清空列表中所有元素	                                                                                                path.clear();（重置路径）
+indexOf(Object o)	                          查找元素首次出现的索引，没找到返回-1	                                                                path.indexOf(3);（查找地窖 3 是否在路径中）
